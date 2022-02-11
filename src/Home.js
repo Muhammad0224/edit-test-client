@@ -6,7 +6,7 @@ import {BASE_PATH} from "./url";
 
 const Home = () => {
     const [variants, setVariants] = useState([])
-    const [variant, setVariant] = useState(1)
+    const [variant, setVariant] = useState(0)
     const [lan,setLan]=useState('UZ')
     const [loading, setLoading]=useState(true)
     const history = useHistory()
@@ -21,6 +21,7 @@ const Home = () => {
             .then(res => {
                 setVariants(res.data)
                 setLoading(false)
+                setVariant(res.data[0].id)
             })
     }
 

@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {Alert, Spinner, Toast} from "reactstrap";
+import {Alert, Spinner} from "reactstrap";
 import {BASE_PATH} from "./url";
 
 const Edit = () => {
