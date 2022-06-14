@@ -27,6 +27,7 @@ const Edit = () => {
         let dto = {
             id: activeTest.id,
             text: activeTest.text,
+            description: activeTest.description,
             answers: [...activeTest.answers]
         }
         await axios.post(BASE_PATH + 'test/update', dto)
@@ -99,6 +100,18 @@ const Edit = () => {
                 </div>
 
             </div>)}
+            <h4>Sharh</h4>
+            <textarea
+                className={'form-control'}
+                cols="30"
+                rows="5"
+                value={activeTest.description}
+                onChange={(e) => setActiveTest({
+                    ...activeTest,
+                    description: e.target.value
+                })}
+            />
+
             <div className="row w-25 justify-content-center my-3">
                 <button className={'btn btn-success'} onClick={save}>Saqlash</button>
             </div>
